@@ -1,30 +1,60 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
+  <Modal/>
+  <Header />
   <router-view />
+  <br>
+  <Footer/>
 </template>
 
+<script>
+import Header from "@/components/Header.vue";
+import Modal from "@/components/Modal.vue";
+import Footer from "@/components/Footer.vue";
+
+export default {
+  components: {
+    Header,
+    Modal,
+    Footer
+  },
+};
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  --primary: #0099ff;
+  --primary-dark: #0281d6;
 }
 
-#nav {
-  padding: 30px;
+a {
+  text-decoration: none;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+body {
+  background-color: #ececec;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+.container {
+  background-color: white;
+  padding: 2%;
+  border-radius: 10px;
+  width: auto;
+  height: fit-content;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+img {
+  width: 100%;
+}
+
+.my {
+  margin: 2% 0 2% 0;
+}
+
+.rounded {
+  border-radius: 10px;
 }
 </style>
